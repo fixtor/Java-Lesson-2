@@ -54,6 +54,7 @@ public class StringToSQL {
 				count++;
 			}
 		}
+		//Вывод запроса
 		System.out.println(selectFromStudents);
 	}
 }
