@@ -5,19 +5,13 @@ public class StringToSQL {
 
 	private static final String WHERE = "WHERE ";
 	private static final String AND = "AND ";
-	StringBuilder selectFromStudents = new StringBuilder("SELECT * FROM students ");
-	StringBuilder where = new StringBuilder(WHERE);
-	StringBuilder and = new StringBuilder(AND);
-
 	private String mainStr;
 	private String[] temp;
 	private String[] temp1;
-
 	private StringBuilder builderStr = new StringBuilder();
+	private StringBuilder selectFromStudents = new StringBuilder("SELECT * FROM students ");
 
 	//Входные данные
-	StringToSQL() {}
-
 	StringToSQL(String nameOfFile) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(nameOfFile));
 		while ((mainStr = br.readLine()) != null) {
@@ -27,10 +21,9 @@ public class StringToSQL {
 	}
 
 	//Преобразование строки
-	void getTemp() {
+	String getTemp() {
 
 		StringBuilder s = new StringBuilder();
-		StringBuilder s1 = new StringBuilder();
 		String delimeter = ", ";
 		//удаляем {,  создаем массив через запятую
 		temp = builderStr.deleteCharAt(0).deleteCharAt(builderStr.length() - 1).toString().split(delimeter);
@@ -55,6 +48,6 @@ public class StringToSQL {
 			}
 		}
 		//Вывод запроса
-		System.out.println(selectFromStudents);
+		return selectFromStudents.toString();
 	}
 }
