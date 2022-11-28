@@ -25,6 +25,7 @@ public class Main {
 		SortArray t = new SortArray();
 		t.setArray(newArr);
 		for(int item: t.getSortedArray()) System.out.print(item + " ");
+		System.out.println();
 
 		/* Задание 3 В файле содержится строка с данными:
 		[{"фамилия":"Иванов","оценка":"5","предмет":"Математика"},
@@ -37,7 +38,8 @@ public class Main {
 			Студент Краснов получил 5 по предмету Физика.
 
 		 */
-
+		ParseTable a = new ParseTable("table.txt");
+		for(String item: a.getString()) System.out.println(item);
 
 	}
 }

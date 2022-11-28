@@ -19,6 +19,8 @@ public class SortArray {
 		SimpleFormatter sFormat = new SimpleFormatter();
 		FileHandler file = new FileHandler("log.xml");
 		logger.addHandler(file);
+		logger.setUseParentHandlers(false); //отключает вывод в консоль по умолчанию
+		
 		file.setFormatter(sFormat);
 
 		try {

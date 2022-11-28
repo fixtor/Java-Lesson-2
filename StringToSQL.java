@@ -5,7 +5,7 @@ public class StringToSQL {
 
 	private static final String WHERE = "WHERE ";
 	private static final String AND = "AND ";
-	private String mainStr;
+	public String mainStr;
 	private String[] temp;
 	private String[] temp1;
 	private StringBuilder builderStr = new StringBuilder();
@@ -14,11 +14,10 @@ public class StringToSQL {
 	//Входные данные
 	StringToSQL(String nameOfFile) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(nameOfFile));
-		while ((mainStr = br.readLine()) != null) {
-			builderStr.append(mainStr);
-		}
+		while ((mainStr = br.readLine()) != null) builderStr.append(mainStr);
 		br.close();
 	}
+
 
 	//Преобразование строки
 	String getTemp() {
